@@ -221,3 +221,61 @@ Handles payment details for each booking.
 ---
 
 💡 *This relational structure ensures scalability and maintains data integrity across the application.*
+
+
+## 🧩 Feature Breakdown
+
+The **Airbnb Clone Project** replicates the core features of the Airbnb platform, allowing users to list, browse, book, and review properties seamlessly.  
+Each feature contributes to a complete and realistic accommodation booking experience.
+
+---
+
+### 👤 User Management
+This feature allows users to **register, log in, and manage their profiles** securely.  
+It includes authentication using Django’s built-in system (with JWT or session-based authentication), role-based access (host or guest), and password management functionalities.
+
+---
+
+### 🏠 Property Management
+Hosts can **create, edit, and delete property listings** with details such as title, location, price, description, and images.  
+This feature ensures that only authenticated hosts can manage their own listings while guests can browse all available properties.
+
+---
+
+### 📅 Booking System
+Guests can **book available properties** by selecting check-in and check-out dates.  
+The system validates availability, calculates total cost, and links each booking to a specific property and user, ensuring accurate record-keeping.
+
+---
+
+### 💳 Payment Integration
+Enables users to **process secure payments** for their bookings.  
+It records each transaction’s amount, method (e.g., card, PayPal), and payment status, ensuring reliable financial management and a smooth booking flow.
+
+---
+
+### 💬 Reviews and Ratings
+Allows guests to **leave reviews and rate properties** after their stay.  
+This enhances transparency and helps future guests make informed booking decisions while giving hosts feedback to improve their service.
+
+---
+
+### 🔍 Search and Filtering
+Users can **search for properties** based on location, price range, and availability.  
+Advanced filtering ensures users find suitable listings efficiently, improving user satisfaction and usability.
+
+---
+
+### 🖥️ Admin Dashboard
+Provides an administrative interface for managing users, properties, bookings, and reviews.  
+This feature allows site administrators to monitor activity, remove inappropriate listings, and maintain the platform’s integrity.
+
+---
+
+### 🌍 Responsive Design
+Ensures the application is **mobile-friendly and accessible** on all screen sizes.  
+With responsive templates and layouts, users can browse and book properties seamlessly across devices.
+
+---
+
+💡 *Together, these features create a robust and scalable booking platform that mirrors real-world Airbnb functionality while highlighting modern backend development practices.*
