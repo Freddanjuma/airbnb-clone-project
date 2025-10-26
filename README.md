@@ -334,3 +334,37 @@ Payment endpoints are protected with additional security layers and external tru
 ---
 
 💡 *Implementing strong API security builds user trust, ensures data protection, and safeguards the system against attacks common in real-world production environments.*
+
+## 🚀 CI/CD Pipeline
+
+The **Continuous Integration and Continuous Deployment (CI/CD)** pipeline automates the process of building, testing, and deploying the **Airbnb Clone Project**.  
+It ensures that every change pushed to the repository is tested, validated, and deployed seamlessly, reducing manual errors and improving code quality.
+
+---
+
+### ⚙️ What is CI/CD?
+- **Continuous Integration (CI):** Automatically tests and integrates code changes into the main branch.  
+  This ensures that new updates do not break existing features.  
+- **Continuous Deployment (CD):** Automatically releases tested changes to the production or staging environment.  
+  This ensures faster delivery and consistent updates.
+
+---
+
+### 🧰 Tools Used
+- **GitHub Actions:** Automates testing and deployment workflows directly from the GitHub repository.  
+  Example: running tests after each push or pull request.  
+- **Docker:** Containerizes the application to ensure consistent environments during development, testing, and production.  
+- **Heroku / AWS / Render (optional):** Hosting platforms for deploying the backend API with auto-deploy enabled on successful CI/CD runs.  
+- **pytest / Django test framework:** Used in the pipeline to validate that all backend logic passes unit and integration tests.
+
+---
+
+### 🔁 How It Works
+1. A developer pushes new code to the GitHub repository.  
+2. GitHub Actions triggers a **CI workflow** to install dependencies, run tests, and build Docker images.  
+3. If all tests pass, a **CD workflow** automatically deploys the updated application to the hosting environment.  
+4. Notifications (e.g., via email or Slack) confirm successful deployments or alert developers if errors occur.
+
+---
+
+💡 *Implementing CI/CD pipelines enhances productivity, ensures higher code reliability, and allows teams to deliver updates faster and more confidently.
