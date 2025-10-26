@@ -279,3 +279,58 @@ With responsive templates and layouts, users can browse and book properties seam
 ---
 
 💡 *Together, these features create a robust and scalable booking platform that mirrors real-world Airbnb functionality while highlighting modern backend development practices.*
+
+
+## 🔒 API Security
+
+Securing the backend is one of the most important aspects of the **Airbnb Clone Project**.  
+Since the application handles sensitive data like user credentials, personal information, and payments, it must be protected against unauthorized access and cyber threats.  
+Below are the key security measures implemented and their importance.
+
+---
+
+### 🔐 Authentication
+The project uses **JWT (JSON Web Tokens)** or **Django’s built-in authentication system** to verify user identities.  
+Only authenticated users can access restricted endpoints, such as property management and booking creation.  
+**Why it matters:** Prevents unauthorized users from accessing personal data or performing restricted actions.
+
+---
+
+### 🧾 Authorization
+Authorization ensures that only users with the correct roles can perform specific actions — for example, **hosts** can manage their properties, while **guests** can only book or review them.  
+**Why it matters:** Protects data integrity and prevents users from altering or accessing resources that don’t belong to them.
+
+---
+
+### 🛡️ Data Validation and Sanitization
+All inputs are validated on both the backend and frontend to prevent malicious payloads (like SQL injection or cross-site scripting).  
+**Why it matters:** Protects the database and application logic from injection attacks and data corruption.
+
+---
+
+### ⚙️ Rate Limiting
+Limits the number of requests a single client can make to the API within a certain timeframe.  
+**Why it matters:** Helps mitigate **DDoS attacks** and protects system performance from abuse or brute-force attempts.
+
+---
+
+### 🔑 HTTPS and Encryption
+All data transmitted between the client and server uses **HTTPS** to ensure encryption in transit.  
+Sensitive data such as passwords and payment information are encrypted before storage.  
+**Why it matters:** Keeps user information private and prevents interception or eavesdropping.
+
+---
+
+### 🧱 CORS (Cross-Origin Resource Sharing) Control
+The backend defines specific domains allowed to make requests to the API.  
+**Why it matters:** Prevents malicious external websites from making unauthorized requests using a user’s credentials.
+
+---
+
+### 💳 Secure Payment Handling
+Payment endpoints are protected with additional security layers and external trusted gateways (like Stripe or PayPal).  
+**Why it matters:** Ensures that all financial transactions are safe, traceable, and free from tampering or data leaks.
+
+---
+
+💡 *Implementing strong API security builds user trust, ensures data protection, and safeguards the system against attacks common in real-world production environments.*
