@@ -81,3 +81,143 @@ They ensure the system is stable, scalable, and continuously integrated for rapi
 ---
 
 💡 *Source: Adapted from ITRexGroup blog on Software Development Team Roles*
+
+
+## ⚙️ Technology Stack
+
+The **Airbnb Clone Project** is built using modern and industry-standard technologies that ensure scalability, performance, and maintainability.  
+Below is an overview of each technology and its role in the project.
+
+### 🐍 Django
+A high-level **Python web framework** used to build the server-side of the application.  
+It provides built-in support for authentication, ORM (Object-Relational Mapping), admin interface, and a robust structure for rapid API development.
+
+### 🧩 Django REST Framework (DRF)
+An extension of Django used to create **RESTful APIs**.  
+It simplifies data serialization, authentication, and communication between the frontend and backend through clean API endpoints.
+
+### 🐘 PostgreSQL
+A powerful **open-source relational database** that stores and manages all application data such as users, listings, bookings, and reviews.  
+It ensures data consistency and provides advanced querying features.
+
+### 🌐 GraphQL *(optional extension)*
+Used to provide a **flexible and efficient API** for fetching specific data from the server.  
+Unlike REST, GraphQL allows clients to request exactly what they need, reducing bandwidth and improving performance.
+
+### ⚡ JavaScript / React (Frontend)
+Used for building the **interactive user interface** of the Airbnb Clone.  
+React provides reusable components and efficient rendering, giving users a seamless browsing experience.
+
+### 🧱 HTML5 & CSS3
+The building blocks of the web interface, used for structuring and styling all frontend pages to ensure responsive design and cross-browser compatibility.
+
+### 🐳 Docker *(for deployment)*
+Used to **containerize** the application, ensuring consistent environments across development and production.  
+This helps simplify deployment and scaling.
+
+### ☁️ Git & GitHub
+Version control tools used for **collaboration, tracking changes, and project hosting**.  
+Git ensures that every change is tracked, while GitHub serves as a remote repository for team collaboration and deployment pipelines.
+
+---
+
+💡 *This technology stack enables a clean separation between backend, database, and frontend, ensuring scalability and maintainability for real-world applications.*
+
+## 🗄️ Database Design
+
+The **Airbnb Clone Project** uses a relational database design to efficiently store and manage all application data.  
+Below are the key entities (tables) and how they relate to one another.
+
+---
+
+### 👤 Users
+Represents both hosts and guests on the platform.
+
+**Key Fields:**
+- `id`: Unique identifier for each user.  
+- `username`: User’s display name or handle.  
+- `email`: Unique email address for authentication.  
+- `password`: Encrypted password for secure login.  
+- `is_host`: Boolean field to differentiate between hosts and guests.
+
+**Relationships:**
+- A **User** can **list multiple Properties**.
+- A **User** can **make multiple Bookings**.
+
+---
+
+### 🏠 Properties
+Represents the accommodation or space listed by a host.
+
+**Key Fields:**
+- `id`: Unique identifier for the property.  
+- `title`: Name or short description of the property.  
+- `description`: Detailed information about the listing.  
+- `price_per_night`: Cost of staying per night.  
+- `location`: Address or city of the property.  
+- `host`: Foreign key linking to the **User** who owns the property.
+
+**Relationships:**
+- A **Property** belongs to one **User (host)**.  
+- A **Property** can have multiple **Bookings** and **Reviews**.
+
+---
+
+### 📅 Bookings
+Represents reservations made by guests for a property.
+
+**Key Fields:**
+- `id`: Unique booking identifier.  
+- `user`: Foreign key referencing the **User** who booked.  
+- `property`: Foreign key referencing the **Property** booked.  
+- `check_in`: Date of arrival.  
+- `check_out`: Date of departure.  
+- `total_price`: Automatically calculated total cost.
+
+**Relationships:**
+- A **Booking** belongs to one **User** and one **Property**.
+
+---
+
+### 💬 Reviews
+Represents feedback left by guests after a stay.
+
+**Key Fields:**
+- `id`: Unique review identifier.  
+- `user`: The **User** who wrote the review.  
+- `property`: The **Property** being reviewed.  
+- `rating`: Numerical score (1–5).  
+- `comment`: Guest’s feedback text.  
+- `created_at`: Date and time the review was created.
+
+**Relationships:**
+- A **Review** belongs to one **User** and one **Property**.
+
+---
+
+### 💳 Payments
+Handles payment details for each booking.
+
+**Key Fields:**
+- `id`: Unique payment identifier.  
+- `booking`: Foreign key referencing the related **Booking**.  
+- `amount`: Total amount paid.  
+- `payment_method`: Method used (e.g., card, PayPal).  
+- `status`: Indicates if the payment is successful or pending.  
+- `timestamp`: Date and time of payment.
+
+**Relationships:**
+- A **Payment** belongs to one **Booking**.
+
+---
+
+### 🔗 Entity Relationships Summary
+- **User ↔ Property** → One-to-Many (a host can own many properties)  
+- **User ↔ Booking** → One-to-Many (a user can make many bookings)  
+- **Property ↔ Booking** → One-to-Many (a property can have many bookings)  
+- **Property ↔ Review** → One-to-Many (a property can have many reviews)  
+- **Booking ↔ Payment** → One-to-One (each booking has one payment record)
+
+---
+
+💡 *This relational structure ensures scalability and maintains data integrity across the application.*
